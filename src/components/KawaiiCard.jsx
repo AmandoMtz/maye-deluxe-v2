@@ -1,0 +1,1 @@
+export default function KawaiiCard({ title, children, footer, onClick }){ return (<div className='card-kawaii p-5 hover:shadow-xl transition cursor-default' onClick={onClick}><h3 className='font-display text-xl text-ink mb-2'>{title}</h3><div className='text-ink/80'>{children}</div>{footer&&<div className='mt-3 text-sm text-ink/60'>{footer}</div>}</div>); }

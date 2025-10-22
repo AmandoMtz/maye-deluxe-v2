@@ -6,7 +6,17 @@ import ws from 'ws';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://mayekul-com-dcsi.vercel.app',
+    'https://*.vercel.app'
+  ],
+  methods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 neonConfig.webSocketConstructor = ws;
